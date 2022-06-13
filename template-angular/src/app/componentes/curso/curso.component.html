@@ -1,0 +1,13 @@
+    <form id="my-form" class="mt-5" #cursoForm="ngForm">
+
+        <label>NOME
+            <input id="field-text" class="cursoDTO" type="text"
+            [(ngModel)]="curso!.nome" name="nome" #courseName="ngModel" >
+        </label>
+        <label>HORAS
+            <input id="field-text2" class="cursoDTO" type="text"
+            [(ngModel)]="curso!.horas" name="horas" #courseName="ngModel" >
+        </label>
+
+        <button [disabled]="cursoForm.invalid" (click)="cadastrar()">Cadastrar</button>
+    </form>

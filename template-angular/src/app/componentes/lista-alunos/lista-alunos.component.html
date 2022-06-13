@@ -1,0 +1,25 @@
+<table class="table table-striped container">
+    <thead>
+      <tr>
+        <th>Nome Completo</th>
+        <th>Matricula</th>
+        <th>CPF</th>
+        <th>Email</th>
+        <th>Turma</th>
+        <th> </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let aluno of alunoList' >
+        <td> {{aluno.nome}} </td>
+        <td> {{aluno.matricula}} </td>
+        <td> {{aluno.cpf  | mask: '000.000.000-00'}} </td>
+        <td> {{aluno.email}} </td>
+        <td> {{aluno.turma}} </td>
+        <td>
+          <a [routerLink]="['/aluno/info', aluno.matricula]" class="btn btn-primary mx-2">Edit</a>
+          <button (click)="excluir()" class="btn btn-danger mx-2">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

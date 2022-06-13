@@ -1,0 +1,8 @@
+    <form id="my-form" class="mt-5" #turmaForm="ngForm">
+        <label> Nome
+            <input id="field-text" class="turma" type="text"
+            [(ngModel)]="turma!.nome" name="nome" #courseName="ngModel" >
+        </label>
+
+        <button [disabled]="turmaForm.invalid" (click)="cadastrar()">Cadastrar</button>
+    </form>

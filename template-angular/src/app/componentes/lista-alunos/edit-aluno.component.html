@@ -1,0 +1,25 @@
+<form id="my-form2" class="mt-5" #alunoForm="ngForm" *ngIf="aluno">
+
+    <label> Nome Completo
+        <input id="field-text" class="alunoDTO" type="text"
+        [(ngModel)]="aluno!.nome" name="nome" #courseName="ngModel" >
+    </label>
+    <label> Matricula
+        <input id="field-text2" class="alunoDTO" type="text"
+        [(ngModel)]="aluno!.matricula" name="matricula" #courseName="ngModel" >
+    </label>
+    <label> CPF
+        <input id="field-text3" class="alunoDTO" type="text"
+        [(ngModel)]="aluno!.cpf" name="cpf" #courseName="ngModel" mask="000.000.000-00">
+    </label>
+    <label> Email
+        <input id="field-text4" class="alunoDTO" type="text"
+        [(ngModel)]="aluno!.email" name="email" #courseName="ngModel" >
+    </label>
+    <label> Turma
+        <input id="field-text5" class="alunoDTO" type="text"
+        [(ngModel)]="aluno!.turma" name="turma" #courseName="ngModel" >
+    </label>
+
+<button [disabled]="alunoForm.invalid" (click)="save()" class="btn btn-primary mr-2">Salvar</button>
+<button [routerLink]="['/courses']" class="btn btn-secondary">Voltar</button>
